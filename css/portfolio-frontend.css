@@ -71,6 +71,7 @@
   }
   
   .portfolio-item {
+    position: relative;
     width: 100%;
     height: 400px;
     cursor: pointer;
@@ -123,13 +124,15 @@
   }
 
 .portafolio {  
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 400px;
   border-radius: 15px 15px 0px 0px;
   overflow: hidden;
 }
 
 .portfolio-item {
+  position: relative;
   width: 300px;
   height: 400px;
   cursor: pointer;
@@ -201,8 +204,7 @@
   z-index: 90;
 }
 
-.ctitle,
-.enlaces {
+.portfolio-item.enlaces {
   position: relative;
   display: block;
   z-index:300;
@@ -276,6 +278,7 @@
 .enlaces {
   margin-top: 10px;
   padding: 30px;
+  z-index: 1000;
 }
 
 .btnDetalles {
@@ -301,39 +304,49 @@
   color: white;
 }
 
-.ctitle {
-  position: relative;
-  padding-top: 20px;
-  margin-bottom: 5px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 25px;
-  font-weight: 450;
-  margin: 0 0 10px;
-  color: aliceblue;
-}
-
 .portfolio-item a {
   text-decoration: none;
 }
 
-.portfolio-item .ctitle {
+.ctitulo {
+  position: absolute;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0px;
+  width: 100%;
+  color: aliceblue;
+  opacity: 0;
+  padding-left: 40px;
+  padding-right: 40px; 
+  text-align: center;
+  z-index:90;
+}
+
+.portfolio-item .table-cell {
+  display: table-cell;
+  vertical-align: middle
+}
+
+/* .portfolio-item .ctitle {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-transition-delay: 0.15s;
   transition-delay: 0.15s;
   transform: scale(1);
-  position: relative;
-  top: -400px;
+  top: 0px;
   opacity: 0;
-}
+} */
 
-.portfolio-item:hover .ctitle {
-  -webkit-transition-delay: 0.15s;
-  transition-delay: 0.15s;
+.portfolio-item:hover .ctitulo {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+  -webkit-transform: scale(1);
   transform: scale(1.5);
-  top: -330px;
+  top: 70px;
   opacity: 1;
+  text-align: center;
 }
 
 .media-content::after {
@@ -468,8 +481,8 @@
 .portfolio-item:hover .enlaces {
   width: 100%;
   height: 90px;
-  position: relative;
-  top: -320px;
+  position: absolute;
+  top: 120px;
   opacity: 1;
 
   -webkit-transition: all 0.5s ease-out;
@@ -481,7 +494,7 @@
 }
 
 .portfolio-item .btnDetalles {
-  top: -26px;
+  top: -27px;
   left: -120px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -494,7 +507,7 @@
 }
 
 .portfolio-item:hover .btnDetalles {
-  top: -26x;
+  top: -27x;
   left: 0px;
 
   opacity: 1;

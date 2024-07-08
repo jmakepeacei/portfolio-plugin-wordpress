@@ -396,8 +396,6 @@ function filter_portfolios()
             }
             $output .= '</div>';
 
-            $output .= '<div class="entry-title ctitle">' . get_the_title() . '</div>';
-
             $output .= '<div class="enlaces">';
             if ($gallery_items) {
                 $output .= '<a href="#" class="item-link portfolio-link" id="' . esc_attr($post_id) . '" data-post-id="' . esc_attr($post_id) . '">Galería</a>';
@@ -483,6 +481,7 @@ function filter_portfolios()
             }
             $output .= '</div>';
 
+            $output .= '<div class="ctitulo"><div class="table-cell">' . get_the_title() . '</div></div>';
             $output .= '<div class="entry-title dtitle">' . get_the_title() . '</div>';
             $excerpt = get_the_excerpt();
             $output .= '<div class="post-excerpt contenido">' . esc_html($excerpt) . '</div>';
