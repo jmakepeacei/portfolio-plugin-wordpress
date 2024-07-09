@@ -457,6 +457,15 @@ function filter_portfolios()
 
             $output .= '</div>';
 
+            $output .= '<div class="gwlogo">';
+            if ($github_link) {
+                $output .= '<img src="' . plugin_dir_url(__FILE__) . 'img/githublogo.png" width="24px">';
+            }
+            if ($github_link) {
+                $output .= '<img src="' . plugin_dir_url(__FILE__) . 'img/weblogo.png" width="24px">';
+            }
+            $output .= '</div>';            
+
             $output .= '<div class="liconos">';
             $icon_items = get_post_meta($post_id, '_portfolio_icon_gallery', true);
             if (!empty($icon_items)) {

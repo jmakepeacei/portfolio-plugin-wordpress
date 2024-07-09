@@ -30,7 +30,7 @@ if ($query->have_posts()) {
 
         $output .= '<div class="enlaces">';
         if ($gallery_items) {
-            $output .= '<a href="#" class="item-link portfolio-link" id="'. esc_attr($post_id) .'" data-post-id="' . esc_attr($post_id) . '">Galería</a>';
+            $output .= '<a href="#" class="item-link portfolio-link" id="' . esc_attr($post_id) . '" data-post-id="' . esc_attr($post_id) . '">Galería</a>';
         }
 
         if ($github_link) {
@@ -95,6 +95,16 @@ if ($query->have_posts()) {
 
         $output .= '</div>';
 
+
+        $output .= '<div class="gwlogo">';
+        if ($github_link) {
+            $output .= '<img src="' . plugin_dir_url(__FILE__) . 'img/githublogo.png" width="24px">';
+        }
+        if ($github_link) {
+            $output .= '<img src="' . plugin_dir_url(__FILE__) . 'img/weblogo.png" width="24px">';
+        }
+        $output .= '</div>';
+
         $output .= '<div class="liconos">';
         $icon_items = get_post_meta($post_id, '_portfolio_icon_gallery', true);
         if (!empty($icon_items)) {
@@ -125,7 +135,7 @@ if ($query->have_posts()) {
     }
 
     $output .= '<div class="pagination">';
-    $big = 999999999; 
+    $big = 999999999;
     $pagination = paginate_links(array(
         'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
         'format'    => '?paged=%#%',
@@ -135,7 +145,7 @@ if ($query->have_posts()) {
         'next_text' => __('Siguiente »'),
         'type'      => 'array',
     ));
-    
+
     if ($pagination) {
         $output .= '<div id="portfolio-pagination" class="portfolio-pagination">';
         foreach ($pagination as $page_link) {
@@ -144,7 +154,6 @@ if ($query->have_posts()) {
         $output .= '</div>';
     }
     $output .= '</div>';
-
 } else {
     $output .= '<p>No se encontraron portafolios.</p>';
 }
@@ -154,5 +163,3 @@ $output .= '</div>';
 wp_reset_postdata();
 
 echo $output;
-
-

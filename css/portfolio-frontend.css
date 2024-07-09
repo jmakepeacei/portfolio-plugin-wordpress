@@ -76,7 +76,7 @@
     height: 400px;
     cursor: pointer;
     margin: 30px; 
-    background-color: #000000;
+    /*background-color: #000000;*/
     border-radius: 15px;
     transition: all 0.5s ease;
     perspective: 1000px;
@@ -85,6 +85,17 @@
   .portfolio-item img {
     width: 24px;
     height: auto; /* Mantener la proporción de aspecto */
+  }
+
+  .gwlogo {
+    display: flex;
+    width: 100%;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30px;  
+    z-index: 150;
   }
   
   .portfolio-item:hover {
@@ -137,7 +148,7 @@
   height: 400px;
   cursor: pointer;
   padding: 0px;
-  background-color: #000000;
+  /*background-color: #000000;*/
   border-radius: 15px;
   transition: all 0.5s ease;
   perspective: 1000px;
@@ -146,6 +157,17 @@
 .portfolio-item img {
   width: 24px;
   height: auto; /* Mantener la proporción de aspecto */
+}
+
+.gwlogo {
+  display: flex;
+  width: 100%;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30px;  
+  z-index: 150;
 }
 
 .portfolio-item:hover {
@@ -612,7 +634,7 @@
 .pagination {
   display: flex;
   flex-direction: column;
-  margin-top: auto; 
+  margin-top: 60px; 
   text-align: center;
 }
 
